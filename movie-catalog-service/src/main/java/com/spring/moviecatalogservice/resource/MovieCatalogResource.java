@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import com.spring.moviecatalogservice.model.*;
 
@@ -21,9 +22,18 @@ public class MovieCatalogResource {
 	@Autowired
 	private RestTemplate restTemplate;
 	
+	@Autowired
+	private WebClient.Builder webClientBuilder;
+	
+	
 	@RequestMapping("/{userId}")
 	public List<CatalogItems> getCatalog(@PathVariable("userId") String userId) {
 	
+		
+		
+		
+		
+		
 		//get all rated movies IDs
 		List<Ratings> ratings = Arrays.asList(
 				new Ratings("1234",5),
